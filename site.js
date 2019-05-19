@@ -151,7 +151,8 @@ jQuery(document).ready(function () {
       last = last.slice(0, -1);
       last.push(line);
     }
-    console.log(last);
+    var graphviz_code_textarea = jQuery('#graphviz_code');
+    graphviz_code_textarea.val(tmpTxt);
     tmpTxt += '}\n';
     return tmpTxt;
   }
