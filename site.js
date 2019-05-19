@@ -146,7 +146,7 @@ jQuery(document).ready(function () {
             } 
           }
           tmpTxt = tmpTxt + '"' + last[last.length - 1] + '"' + ' -> ' + '"' + line + '"'  + label + '\n';
-          relation_array.push(tmpTxt + '"' + last[last.length - 1] + '"' + ' -> ' + '"' + line + '"'  + label + '\n');
+          relation_array.push('"' + last[last.length - 1] + '"' + ' -> ' + '"' + line + '"' + '\n');
         }
       last = last.slice(0, -1);
       last.push(line);
