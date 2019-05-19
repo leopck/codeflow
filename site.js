@@ -101,6 +101,7 @@ jQuery(document).ready(function () {
     var tmpTxt = "digraph G {\n";
     var indent = 0;
     var last = [];
+    var relation_array = [];
 
     var lines = text.split('\n');
     var line;
@@ -145,6 +146,7 @@ jQuery(document).ready(function () {
             } 
           }
           tmpTxt = tmpTxt + '"' + last[last.length - 1] + '"' + ' -> ' + '"' + line + '"'  + label + '\n';
+          relation_array.push(tmpTxt + '"' + last[last.length - 1] + '"' + ' -> ' + '"' + line + '"'  + label + '\n');
         }
       last = last.slice(0, -1);
       last.push(line);
@@ -152,6 +154,7 @@ jQuery(document).ready(function () {
     var graphviz_code_textarea = jQuery('#graphviz_code');
     graphviz_code_textarea.val(tmpTxt);
     tmpTxt += '}\n';
+    console.log(relation_array);
     return tmpTxt;
   }
 
