@@ -43,7 +43,6 @@ jQuery(document).ready(function () {
     svg_div.html("");
 
     if (buttonNumber == 6){
-      console.log("Entering number 6");
       var data = TextParser(graphviz_data_textarea.val());
     }
     else {
@@ -123,10 +122,7 @@ jQuery(document).ready(function () {
           last = last.slice(0, -1);
         }
       }
-
-      console.log(last);
-      console.log('Last print line 124');
-
+      
       line = line.trim().replace(/\"/g, '\\"');
       if (line.endsWith("?")){
         tmpTxt = tmpTxt + '"' + line + '" ' + '[shape=diamond]\n';
@@ -152,19 +148,14 @@ jQuery(document).ready(function () {
           }
           tmpTxt = tmpTxt + '"' + last[last.length - 1] + '"' + ' -> ' + '"' + line + '"'  + label + '\n';
         }
-      //console.log(last);
       last = last.slice(0, -1);
-      //console.log(last);
       last.push(line);
     }
     tmpTxt += '}\n';
-    //console.log(tmpTxt);
     return tmpTxt;
   }
 
   sample_6_btn.click(function(){
-    console.log(buttonNumber);
-    console.log((jQuery("#sample6_text").html().trim()));
     buttonNumber = 6;
     InsertGraphvizText((jQuery("#sample6_text").html().trim()));
   });
