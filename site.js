@@ -127,13 +127,11 @@ jQuery(document).ready(function () {
       if (line.endsWith("?")){
         tmpTxt = tmpTxt + '"' + line + '" ' + '[shape=diamond]\n';
       }
-      else {
-        if (line.endsWith(".")){
+      else if (line.endsWith(".")){
           tmpTxt = tmpTxt + '"' + line + '" ' + '[shape=ellipse]\n';
-        }
-        else{
-          tmpTxt = tmpTxt + '"' + line + '" ' + '[shape=box]\n';
-        }
+      }
+      else{
+        tmpTxt = tmpTxt + '"' + line + '" ' + '[shape=box]\n';
       }
     
       if (last.length > 0){
