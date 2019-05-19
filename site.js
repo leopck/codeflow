@@ -151,6 +151,7 @@ jQuery(document).ready(function () {
       last = last.slice(0, -1);
       last.push(line);
     }
+    console.log(last);
     tmpTxt += '}\n';
     return tmpTxt;
   }
