@@ -45,7 +45,6 @@ jQuery(document).ready(function () {
     if (buttonNumber == 6){
       console.log("Entering number 6");
       var data = TextParser(graphviz_data_textarea.val());
-      buttonNumber = 1;
     }
     else {
       var data = graphviz_data_textarea.val();
@@ -75,22 +74,27 @@ jQuery(document).ready(function () {
   generate_btn.click(UpdateGraphviz);
 
   sample_1_btn.click(function(){
+    buttonNumber = 1;
     InsertGraphvizText(jQuery("#sample1_text").html().trim());
   });
 
   sample_2_btn.click(function(){
+    buttonNumber = 2;
     InsertGraphvizText(jQuery("#sample2_text").html().trim());
   });
 
   sample_3_btn.click(function(){
+    buttonNumber = 3;
     InsertGraphvizText(jQuery("#sample3_text").html().trim());
   });
 
   sample_4_btn.click(function(){
+    buttonNumber = 4;
     InsertGraphvizText(jQuery("#sample4_text").html().trim());
   });
 
   sample_5_btn.click(function(){
+    buttonNumber = 5;
     InsertGraphvizText(jQuery("#sample5_text").html().trim());
   });
 
@@ -119,6 +123,9 @@ jQuery(document).ready(function () {
           last = last.slice(0, -1);
         }
       }
+
+      console.log(last);
+      console.log('Last print line 124');
 
       line = line.trim().replace(/\"/g, '\\"');
       if (line.endsWith("?")){
@@ -156,6 +163,8 @@ jQuery(document).ready(function () {
   }
 
   sample_6_btn.click(function(){
+    console.log(buttonNumber);
+    console.log((jQuery("#sample6_text").html().trim()));
     buttonNumber = 6;
     InsertGraphvizText((jQuery("#sample6_text").html().trim()));
   });
